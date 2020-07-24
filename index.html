@@ -1,143 +1,941 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>한솔제지</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  
+  <!-- bxskider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+  </script>
+
 
   <style>
-    /* css reset */
-    *{margin:0; boder:none; padding:0;}
-    a{text-decoration:none; color:#000000;}
-    ul,ol{list-style:none;}
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-    /* Page css */
-    .wrap{
-      width: 1200px;
-      margin:0 auto;
-      border-top:3px solid #005da8;
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
     }
-    
-    /* header_left_logo */
-    .header{
-      padding: 4px;
+
+    /* wrap css */
+    .content {
+      width: 1240px;
+      margin: 0 auto;
     }
+
+    a {
+      color: #000;
+    }
+
+    .circle {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    /* heaer css */
+    .header {
+      margin-bottom:59px;
+      border-bottom: 1px solid #ddd;
+      background-color:#fff;
+    }
+
+    /* header_left css */
     .header_left{
+      position: relative;
       float: left;
-      padding-top:26px;
     }
-    .header_right{
-      float: right;
+    .main_logo{
+      height:90px;
+      position: relative;
     }
-    .points,.logo{
-      display:inline-block;
+    .main_logo>a{
+      position:absolute;
+      top: 50%;
+      transform:translateY(-50%);
     }
-    .logo{
-      font-weight:bolder;
-      font-size:34px;
-      color:#5b6366;
+    .main_logo p:first-child {
+      padding-left:12px;
+      font-family:'Roboto';
+      font-weight:900;
+      font-size:32px;
+      color:#555;
+      position:relative;
     }
-    .header_left_bottom{
-      color:#5b6366;
-      text-align:right;
+    .main_logo p:first-child::before,
+    .main_logo p:first-child::after{
+      content:'';
+      display:block;
+      width:7px;
+      height:8px;
+      position:absolute;
     }
-    .point_01,.point_02{
-      width:9px;
-      height:9px;
+    .main_logo p:first-child::before{
+      background-color:#07c;
+      left:0;
+      top:4px;
     }
-    .point_01{
-      margin-bottom:6px;
-      background-color:#007dc6;
+    .main_logo p:first-child::after{
+      background-color:#094;
+      left:0;
+      bottom:5px;
     }
-    .point_02{
-      background-color:#00a651;
+    .main_logo p:last-child{
+      float:right;
+      font-size:12px;
+      color:#555;
+    }
+    .main_nav{
+      position:absolute;
+      width:715px;
+      left:210px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+    .main_nav>li{
+      float:left;
+      padding:0 25px;
+      position:relative;
+    }
+    .main_nav>li>a{
+      font-weight:500;
+      font-size:18px;
+      color:#333;
+    }
+    .main_nav>li:hover>a{
+      color:#07c;
+    }
+    /* .main_nav>li:hover:nth-child(2n+1)>a {
+      color: #07c;
+    }
+    .main_nav>li:hover:nth-child(2n)>a {
+      color: #094;
+    } */
+    
+
+    /* sub_nav css */
+    .sub_nav{
+      position:absolute;
+      left:5px;
+      top:-1500px;
+      width:600px;
+      padding-top:55px;
+      padding-bottom:50px;
+      transform:3s;
+    }
+    .sub_nav>li{
+      float:left;
+      margin:0 20px;
+    }
+    .sub_nav>li>a{
+      font-size:14px;
+      color:#666;
     }
     
-    /* header_right_s_menu */
-    li{
+    .main_nav>li:hover>.sub_nav{
+      top:20px;
+    }
+
+    /* header_right css */
+    .header_right.sns{
+      float:right;
+      position:relative;
+      width:300px;
+      height:90px;
+    }
+    .sns>ul{
+      position:absolute;
+      top:50%;
+      right:0;
+      transform:translateY(-50%);
+    }
+    .sns li{
+      float:left;
+      margin-left:9px;
+      position:relative;
+    }
+    .sns li a{
       display:inline-block;
+      font-size:14px;
+      color:#666;
+      position:relative;
     }
-    .s_menu{
-      padding:20px 0;
-      text-align:right;
+
+    .sns li:nth-child(1){
+      padding-top:9px;
     }
-    .s_menu>li{
-      padding:0 14px;
+
+    .sns li:nth-child(2){
+      margin-top:2px;
+      margin-left:27px;
     }
-     .border_right{
-      border-right:#d4d4d4 1px solid;     
-    }    
-    .border-right-none{
-      padding-right:0 !important;
+
+    .sns li:nth-child(2) a span{
+      width:17px;
+      height:17px;
+      border:2px solid #fff;
+      border-radius:4px;
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
     }
-    .s_menu>li>a{
+
+    .sns li:nth-child(2) a::before,
+    .sns li:nth-child(2) a::after{
+      content:'';
+      display:block;
+      position:absolute;
+    }
+
+    .sns li:nth-child(2) a::before {
+      width:5px;
+      height:5px;
+      border:2px solid #fff;
+      border-radius:5px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+    }
+    .sns li:nth-child(2) a::after{
+      width:2px;
+      height: 2px;
+      background-color: #fff;
+      left: 65%;
+      top: 35%;
+      transform: translate(-50%, -50%);
+    }
+    .sns li:nth-child(3) a::before {
+      content: 'f';
+      display: block;
+      font-family: 'Roboto';
+      font-weight: 900;
+      font-size: 24px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .sns li:nth-child(4) a::before {
+      content: 'Eng';
+      display: block;
+      font-family: 'Roboto';
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .sns li span {
+      display: inline-block;
+      text-indent: -99999%;
+    }
+    
+
+    /* section CSS */
+    .article{margin-bottom:180px;}
       
-      font-size: 12px;
-      color:#666666;
-    }
+      /* main banner CSS */
+      .main_banner{
+        width:100%;
+        max-width:1980px;
+        margin:0 auto;
+      }
 
-    /* header_right_l_menu */
-    .l_menu{
-      padding:16px 0 40px;
-    }
-    .l_menu>li{
-      padding:0 32px;
-    }
-    .l_menu>li>a{
-      font-size:18px;
-      font-weight:bolder;
-      color:#111111;
-    }
+      .slider>div{
+        position:relative;
+      }
 
+      .slider>div>img{
+        width:100%;
+      }
 
-    .section{
-      clear: both;
+      .slider>div>.banner_txt{
+        width:600px;
+        position:absolute;
+        left:272px;
+        top:187px;
+      }
+
+      .bx-wrapper {
+        -moz-box-shadow:none;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        border:none;
+      }
+
+      .bx-wrapper .bx-prev,
+      .bx-wrapper .bx-next{
+        background:none;
+        position:relative;
+      }
+
+      /* .bx-wrapper .bx-prev::before,
+      .bx-wrapper .bx-next::before{
+        content:'';
+        display:block;
+        width:32px;
+        height:32px;
+        border-radius:50%;
+        background-color:#666666;
+        position:absolute;
+        left:0;
+        top:0;
+      } */
+      
+      .bx-wrapper .bx-prev::after,
+      .bx-wrapper .bx-next::after{
+        content:'';
+        display:block;
+        width:40px;
+        height:40px;
+        border-top:1px solid white;
+        border-left:1px solid white;
+        -moz-transform:rotate(-45deg) translate(7%,-62%);
+        -ms-transform:rotate(-45deg) translate(7%,-62%);
+        -o-transform:rotate(-45deg) translate(7%,-62%);
+        -webkit-transform:rotate(-45deg) translate(7%,-62%);
+        transform:rotate(-45deg) translate(7%,-62%);
+        position:absolute;
+        left:120%;
+        top:310%;
+      }
+
+      .bx-wrapper .bx-next::after{
+        -moz-transform:rotate(135deg) translate(7%,-62%);
+        -ms-transform:rotate(135deg) translate(7%,-62%);
+        -o-transform:rotate(135deg) translate(7%,-62%);
+        -webkit-transform:rotate(135deg) translate(7%,-62%);
+        transform:rotate(135deg) translate(7%,-62%);
+        left: -160%;
+        top: 255%;
+      }
+
+      .bx-wrapper .bx-next{
+        background:none;
+        }
+
+      .bx-wrapper .bx-pager{
+        bottom:30px;
+        }
+
+      .banner_txt>h2{
+        font-weight:900;
+        font-size:4em;
+        margin-bottom:30px;
+        }
+
+      .banner_txt>h2>span{
+        display:inline-block;
+        color:red;
+        }
+
+      .banner_txt>p
+      {font-size:1.2em;
+      color:#333;
+      line-height:24px;
+      margin-bottom:20px;
+      }
+
+      .banner_txt>span{
+        font-size:1.2em;
+        color:#666;display:inline-block;
+        position:relative;
+        padding-right:50px;
+        }
+
+      .banner_txt>span::before{
+        content:'';
+        display:block;
+        width:32px;
+        height:32px;
+        border-radius:50%;
+        background-color:black;
+        position:absolute;
+        right:0;
+        top:-6px;
+      }
+
+      .banner_txt>span::after{
+        content:'';
+        display:block;
+        width:10px;
+        height:10px;
+        border-top:2px solid white;
+        border-right:2px solid white;
+        transform:rotate(45deg);
+        position:absolute;
+        right: 12px;
+        top: 3px;
+      }
+
+      
+      /* sub banner CSS */
+      .sub_banner_txt{
+        margin-bottom:30px;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:space-between;
+      }
+
+      .sub_banner_txt>h2{
+        flex:1;
+        font-weight:700;
+        font-size:5em;
+        line-height:1.4em;
+      }
+
+      .sub_banner_txt>.line{
+        flex:1;
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:center;
+      }
+
+      .sub_banner_txt>.line>div{
+        width:80%;
+        height:2px;
+        background-color:#333333;
+      }
+
+      .sub_banner_txt>.sub_banner_content{
+        flex:2;
+      }
+
+      .sub_banner_content>h4{
+        font-weight:700;
+        font-size:1.4em;
+        line-height:1.5em;
+        color:#333333;
+      }
+
+      .sub_banner_content>p{
+        color:#999999;
+        padding:20px 0;
+      }
+
+      .sub_banner_content>span{
+        padding:10px 40px 10px 16px;
+        background-color:black;
+        color:white;
+        cursor:pointer;
+        position:relative;
+      }
+
+      .sub_banner_content>span::after{
+        content:'';
+        display:inline-block;
+        width:10px;
+        height:2px;
+        background-color:white;
+        transform:rotate(45deg);
+        position:absolute;
+        right: 16px;
+        top: 16px;
+      }
+
+      .sub_banner_content>span::before{
+        content:'';
+        display:inline-block;
+        width:10px;
+        height:2px;
+        background-color:white;
+        transform:rotate(-45deg);
+        position:absolute;
+        right: 16px;
+        top: 22px;
+      }
+      
+      /* together CSS */
+      .together .content{
+        position:relative;
+        height:500px;
+      }
+
+      .go_together,
+      .go_together_txt{
+        position:absolute;
+        left:0;
+        top:0;
+        width:1240px;
+      }
+
+      .go_together>h3{
+        font-weight:900;
+        font-size:14em;
+        color:#eeeeee;
+        opacity:0.3;
+      }
+
+      .go_together_txt h2{
+        font-weight:700;
+        font-size:3em;
+        line-height:2em;
+        text-align:right;        
+      }
+
+      .go_together_txt .line{
+        height:1px;
+        background-color:#333333;
+        margin:50px 0;
+        text-indent:-99999px;
+      }
+
+      .go_together_txt h3{
+        font-weight:700;
+        font-size:2em;
+        line-height:1.5em; 
+        color:#333333;       
+      }
+
+      .go_together_txt p{
+        font-size:1.4em;
+        line-height:1.5em;
+        color:#666666;
+      }
+
+      .go_together_txt .circle{
+        position: relative;
+      }
+
+      .go_together_txt .circle::before,
+      .go_together_txt .circle::after{
+        content:'';
+        display:block;
+        width:10px;
+        height:1px;
+        background-color:#ffffff;
+        position:absolute;
+      }
+
+      .go_together_txt .circle::before{
+        left: 13px;
+        top: 13px;
+        transform: rotate(45deg);
+      }
+
+      .go_together_txt .circle::after{
+        left: 13px;
+        top: 20px;
+        transform: rotate(-45deg);
+      }
+
+      .go_together_txt li:nth-child(3),
+      .go_together_txt li:nth-child(5){
+        display: flex;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+      }
+
+      .go_together_txt li:nth-child(3)>h3,
+      .go_together_txt li:nth-child(5)>h3{
+      flex-basis:240px;
+      margin-right: 10px;
+      }
+
+      .go_together_txt li:nth-child(3)>p,
+      .go_together_txt li:nth-child(5)>p{
+      flex-basis:720px;
+      margin-right: 10px;
       }
 
 
-  </style>
+    /* footer css */
+    .footer {
+      height:150px;
+      background-color: #f0f0f0
+    }
 
+    .footer .content{
+      height:150px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer_logo>p:first-child{
+      font-family: 'Roboto';
+      font-weight: 900;
+      font-size: 2em;
+      color: #999;
+      padding-left:10px;
+      position: relative;
+    }
+    
+    .footer_logo>p:first-child::before,
+    .footer_logo>p:first-child::after{
+      content: '';
+      display: block;
+      width: 7px;
+      height: 8px;
+      position: absolute;
+      left:0;
+    }
+
+    .footer_logo>p:first-child::before{
+      background-color:#07c;
+      top:4px;
+      opacity: 0.4;
+    }
+
+    .footer_logo>p:first-child::after{
+      background-color:#094;
+      bottom:2px;
+      opacity: 0.4;
+    }
+
+    .footer_logo>p:last-child{
+      font-size: 0.8em;
+      color:#999;
+      padding-top: 3px;
+      padding-left:56px;
+    }
+
+    .footer .content .footer_logo{
+      flex: 1;
+    }
+
+    .footer .content address{
+      flex:2;
+      color: #666;
+    }
+
+    .footer .content address>p:first-child{
+      margin-bottom:10px;
+    }
+
+    .footer .content address>p:last-child{
+      font-family:'Roboto';
+    }
+
+    .footer .content>ul{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+    }
+
+    .footer select{
+      width: 150px;
+      height: 40px;
+      margin-left:20px;
+      padding:6px;
+      border:none;
+    }
+
+  </style>
 </head>
 
 <body>
   <div class="wrap">
-    <!-- header -->
-    <div class="header">
-      <div class="header_left">
-        <div class="header_left_top">
-          <div class="points">
-            <div class="point_01"></div>
-            <div class="point_02"></div>
+    <header class="header">
+      <div class="row">
+        <div class="content clearfix">
+          <div class="header_left">
+            <h1 class="main_logo">
+              <a href="index.html">
+                <p>Hansol</p>
+                <p>한솔제지</p>
+              </a>
+            </h1>
+            <ul class="main_nav clearfix">
+              <li>
+                <a href="#">제품소개</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">인스퍼</a></li>
+                  <li><a href="#">인쇄용지</a></li>
+                  <li><a href="#">산업용지</a></li>
+                  <li><a href="#">특수지</a></li>
+                  <li><a href="#">감열지</a></li>
+                  <li><a href="#">신소재</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">회사소개</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">한솔제지</a></li>
+                  <li><a href="#">이념과 비전</a></li>
+                  <li><a href="#">연혁</a></li>
+                  <li><a href="#">CEO인사</a></li>
+                  <li><a href="#">문화사업</a></li>
+                  <li><a href="#">사업장 소개</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">지속가능경영</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">환경경영</a></li>
+                  <li><a href="#">윤리경영</a></li>
+                  <li><a href="#">사회공헌</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">투자정보</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">주식정보</a></li>
+                  <li><a href="#">재무정보</a></li>
+                  <li><a href="#">공시정보</a></li>
+                  <li><a href="#">기업지배구조</a></li>
+                  <li><a href="#">전자공고</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">인재채용</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">인재상</a></li>
+                  <li><a href="#">인사정보</a></li>
+                  <li><a href="#">채용정보</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">소식</a>
+                <ul class="sub_nav clearfix">
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">뉴스</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class="logo">Hansol</div>
+          <div class="header_right sns">
+            <ul class="clearfix">
+              <li><a href="#">고객문의</a></li>
+              <li><a href="#" class="circle"><span>instargram</span></a></li>
+              <li><a href="#" class="circle"><span>facebook</span></a></li>
+              <li><a href="#" class="circle"><span>Eng</span></a></li>
+            </ul>
+          </div>
         </div>
-        <div class="header_left_bottom">한솔제지</div>
       </div>
-      <div class="header_right">
-        <ul class="s_menu">
-          <li class="border_right"><a href="#">Home</a></li>
-          <li class="border_right"><a href="#">English</a></li>
-          <li class="border_right"><a href="#">Sitemap</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">Intagram</a></li>
-          <li class="border-right-none"><a href="#">Facebook</a></li>
-        </ul>
-        <ul class="l_menu">
-          <li><a href="#">회사소개</a></li>
-          <li><a href="#">사업영역</a></li>
-          <li><a href="#">지속가능경영</a></li>
-          <li><a href="#">투자정보</a></li>
-          <li class="border-right-none"><a href="#">고객지원</a></li>
-        </ul>
+    </header>
+    <section class="section">
+      <article class="article main_banner">
+        <div class="row">
+          <div class="slider">
+            <div>
+              <img src="./imags/main_banner01.jpg" alt="이미지01">
+              <div class="banner_txt">
+                <h2><span>M</span>ROUGH</h2>
+                <P>
+                  높은 백색도와 풍부한 질감이 특징인 러프그로스입니다.<br>
+                  선명한 인쇄성과 안정적인 후가공이 장점입니다.
+                </P>
+                <span>자세히보기</span>
+              </div>
+            </div>
+            <div>
+              <img src="./imags/main_banner02.jpg" alt="이미지02">
+              <div class="banner_txt">
+                <h2>앙상블<span>E</span>클래스</h2>
+                <P>
+                  앙상블E클래스는 백색도, 인쇄성, 러프감 모두 우수한 프리미엄 인쇄용지입니다.<br>
+                  탁월한 색상과 이미지 재현력, 뛰어난 부피감을 가지고 있어 인쇄물을 더욱 고급스럽게 만들어 줍니다.<br>
+                  특히 획기적인 잉크 건조 속도는 인쇄 작업을 시간을 단축시켜 줍니다.
+                </P>
+                <span>자세히보기</span>
+              </div>
+            </div>
+            <div>
+              <img src="./imags/main_banner03.jpg" alt="이미지03">
+              <div class="banner_txt">
+                <h2>Hi-QAB 플러스</h2>
+                <P>
+                  100% 천연 펄프를 사용한 무형광 용지입니다.<br>
+                  우수한 인쇄적성과 높은 강도, 고급스러운 표면을 가지고 있어<br>
+                  화장품, 의약품, 고급 포장재, 식품 포장재로 사용됩니다. 
+                </P>
+                <span>자세히보기</span>
+              </div>
+            </div>
+            <div>
+              <img src="./imags/main_banner04.jpg" alt="이미지04">
+              <div class="banner_txt">
+                <h2>PROTEGO</h2>
+                <P>
+                  친환경 종이 포장재, 프로테고<br>
+                  종이 표면에 특수 배리어 코팅을 접목하여 플라스틱이나 알루미늄을 대체할 수 있습니다.<br>
+                  이제 친환경은 선택이 아닌 우리의 몫입니다.
+                </P>
+                <span>자세히보기</span>
+              </div>
+            </div>
+            <div>
+              <img src="./imags/main_banner05.jpg" alt="이미지05">
+              <div class="banner_txt">
+                <h2>한솔감열지Green</h2>
+                <P>
+                  비스페놀A를 함유하지 않은 유해물질이 없는 무독성 감열지입니다.<br>
+                  POS영수증, ATM 등 일상생활에서 쉽게 만날 수 있습니다.
+                </P>
+                <span>자세히보기</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="article sub_banner">
+        <div class="row">
+          <div class="slider">
+            <div>
+              <div class="sub_banner_txt content">
+                <h2>
+                  한솔은<br>
+                  사람이다
+                </h2>
+                <div class="line">
+                  <div></div>
+                </div>
+                <div class="sub_banner_content">
+                  <h4>
+                    한솔인은 어려움에 부닥치거나 도전을 받으면<br>
+                    철갑을 두른 듯하다는 그 소나무처럼 강철 같은 힘을 발휘한다.<br>
+                    침엽수의 날카로운 잎처럼 예리하고 섬세한 적응력으로 응전을 한다.
+                  </h4>
+                  <p>초대 문화부 장관 이어령, 한솔 40년 사사 축사 중</p>
+                  <span class="button">한솔제지 소개</span>
+              </div>
+              </div>
+              <div class="sub_banner_img">
+                <img src="./imags/sec_01.jpg" alt="서브01">
+              </div>
+            </div>
+            <div>
+              <div class="sub_banner_txt content">
+                <h2>
+                  한솔은<br>
+                  기술이다
+                </h2>
+                <div class="line">
+                  <div></div>
+                </div>
+                <div  class="sub_banner_content">
+                  <h4>
+                    플라스틱이나 금속의 광물질과는 달리<br>
+                    종이는 우리에게 늘 따숩고 정겨운 촉감을 준다.<br>
+                    문방사우의 하나인 이 종이야말로 시와 서화를 담는 꿈의 그릇이 아니겠는가.
+                  </h4>
+                  <p>초대 문화부 장관 이어령, 한솔 40년 사사 축사 중</p>
+                  <span class="button">한솔제지 소개</span>
+              </div>
+              </div>
+              <div class="sub_banner_img">
+                <img src="./imags/sec_02.jpg" alt="서브02">
+              </div>
+            </div>
+            <div>
+              <div class="sub_banner_txt content">
+                <h2>
+                  한솔은<br>
+                  미래이다
+                </h2>
+                <div class="line">
+                  <div></div>
+                </div>
+                <div  class="sub_banner_content">
+                  <h4>
+                    한솔은 영원한 청년으로<br>
+                    40대의 나이테를 안에 몰래 숨기며<br>
+                    천년을 만년을 향하여 젊게 살아가는 바위 같은 나무다.
+                  </h4>
+                  <p>초대 문화부 장관 이어령, 한솔 40년 사사 축사 중</p>
+                  <span class="button">한솔제지 소개</span>
+              </div>
+              </div>
+              <div class="sub_banner_img">
+                <img src="./imags/sec_03.jpg" alt="서브03">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="article together">
+        <div class="row">
+          <div class="content">
+            <div class="go_together">
+              <h3>Go together</h3>
+            </div>
+            <ul class="go_together_txt">
+              <li>
+                <h2>한솔제지는<br>고객과 함께 성장합니다.</h2>
+              </li>
+              <li class="line">라인</li>
+              <li>
+                <h3>페이퍼넷</h3>
+                <p>
+                  한솔제지는 환경 변화와 고객 니즈를 반영한 제품 포트폴리오 강화를 통해<br>
+                  선진 제지기업으로서의 최고의 제품을 위해 노력하고 있습니다.
+                </p>
+                <div class="circle"></div>
+              </li>
+              <li class="line">라인</li>
+              <li>
+                <h3>열린구매 시스템</h3>
+                <p>
+                  구매관리, 운송정보, 납품실적관리를 쉽고 편리하게<br>
+                  확인 하실 수 있습니다.
+                </p>
+                <div class="circle"></div>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer class="footer">
+      <div class="row">
+        <div class="content">
+          <h5 class="footer_logo">
+            <p>Hansol</p>
+            <p>한솔제지</p>
+          </h5>
+          <address>
+            <p>
+              서울 중구 을지로 100 (을지로2가) 파인애비뉴 B동 23~24층
+            </p>
+            <p>
+              Copyright 2020 Hansol., All rights Reserved.
+            </p>
+          </address>
+          <ul>
+            <li>
+              <a href="#">개인정보처리방침</a>
+            </li>
+            <li>
+              <select>
+                <option disabled>family site</option>
+                <option>한솔그룹</option>
+                <option>한솔PNS</option>
+                <option>한솔홈데코</option>
+                <option>한솔테크닉스</option>
+                <option>한솔케미칼</option>
+                <option>한솔EME</option>
+                <option>한솔로지스틱스</option>
+                <option>한솔인티큐브</option>
+                <option>한솔 Museum San</option>
+                <option>한솔페이퍼텍</option>
+              </select>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    
-    <!-- cection -->
-    <div class="cection">
-      
-    </div>
-    <div class="footer"></div>
-
+    </footer>
   </div>
 </body>
+
 </html>
